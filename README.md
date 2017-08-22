@@ -11,5 +11,9 @@ name, and the bot will work (provided that you have the two dependencies above s
 PostgreSQL database (and a user with the appropriate permissions) in order to run at all. There's only one table with
 two columns (prefix and suffix), so it's not too complicated.
 
+## Running
+Obviously make sure you `pip install requirements.txt`, and make sure the config actually has stuff in it and that it's
+named `config.json`. If those requirements are fulfilled, just `python3 markov.py` and it should work.
+
 ## TODO:
 - Generate output lol
