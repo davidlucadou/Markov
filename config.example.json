@@ -1,0 +1,17 @@
+{
+	"nick": "",
+	"user": "",
+	"real": "",
+	"nickservPass": "",
+	"server": "",
+	"port": 6667,
+	"channels": [
+		""
+	],
+	"trigger": "",
+	"minGap": 30,
+	"maxLineLength": 20,
+    "DBName" : "",
+    "DBUser" : "",
+    "DBPass" : ""
+}
