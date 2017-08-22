@@ -32,6 +32,9 @@ class Client(pydle.Client):
             self.message('NICKSERV', identify)
 
     def on_channel_message(self, target: str, by: str, message: str):
+        if len(message.split()) == 0:
+            return
+
         command = message.split()[0]
         if by == self.config['admin']:
             if command == '!d':
