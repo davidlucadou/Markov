@@ -6,4 +6,4 @@ class Link():
     def slide(self):
         prefix_words = self.prefix.split()
         new_prefix = [prefix_words[1], self.suffix]
-        self.prefix.join(new_prefix)
+        self.prefix = ' '.join(new_prefix)

@@ -64,10 +64,13 @@ class Client(pydle.Client):
 
         for i in range(random.randint(5, self.config['maxLineLength'])):
             link.slide()
-            self.cursor.execute("SELECT suffix FROM markov WHERE prefix = %s ORDER BY RANDOM()", (link.prefix,))
-            row = self.cursor.fetchall()[0]
-            link.suffix = row[0]
-            line.append(link.suffix)
+            self.cursor.execute("SELECT suffix FROM markov WHERE prefix LIKE %s ORDER BY RANDOM()", (link.prefix,))
+            try:
+                row = self.cursor.fetchall()[0]
+                link.suffix = row[0]
+                line.append(link.suffix)
+            except IndexError:
+                break
 
         return ' '.join(line)
 
