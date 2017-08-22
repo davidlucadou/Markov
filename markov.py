@@ -10,6 +10,7 @@ def main():
     try:
         config_file = open('config.json')
         config = json.load(config_file)
+        config_file.close()
     except FileNotFoundError:
         print('Create config.json file!')
         sys.exit(1)

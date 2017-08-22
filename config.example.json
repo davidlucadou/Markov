@@ -11,6 +11,8 @@
 	"trigger": "",
 	"minGap": 30,
 	"maxLineLength": 20,
+	"chance" : 10,
+	"posting" : false,
     "DBName" : "",
     "DBUser" : "",
     "DBPass" : ""
