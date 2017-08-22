@@ -70,8 +70,9 @@ class Client(pydle.Client):
             self.cursor.execute("SELECT suffix FROM markov WHERE prefix = %s ORDER BY RANDOM() LIMIT 1", (link.prefix,))
             try:
                 row = self.cursor.fetchone()
-                link.suffix = row[0]
-                line.append(link.suffix)
+                if row:
+                    link.suffix = row[0]
+                    line.append(link.suffix)
             except IndexError:
                 break
 
