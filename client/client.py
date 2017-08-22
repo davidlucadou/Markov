@@ -58,15 +58,15 @@ class Client(pydle.Client):
     def generate_line(self):
         statement = "SELECT prefix, suffix FROM markov ORDER BY RANDOM() LIMIT 1"
         self.cursor.execute(statement)
-        row = self.cursor.fetchall()[0]
+        row = self.cursor.fetchone()
         link = Link(row[0], row[1])
         line = [link.prefix, link.suffix]
 
         for i in range(random.randint(5, self.config['maxLineLength'])):
             link.slide()
-            self.cursor.execute("SELECT suffix FROM markov WHERE prefix LIKE %s ORDER BY RANDOM()", (link.prefix,))
+            self.cursor.execute("SELECT suffix FROM markov WHERE prefix = %s ORDER BY RANDOM() LIMIT 1", (link.prefix,))
             try:
-                row = self.cursor.fetchall()[0]
+                row = self.cursor.fetchone()
                 link.suffix = row[0]
                 line.append(link.suffix)
             except IndexError:
