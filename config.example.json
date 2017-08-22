@@ -13,6 +13,7 @@
 	"maxLineLength": 20,
 	"chance" : 10,
 	"posting" : false,
+	"admin" : "",
     "DBName" : "",
     "DBUser" : "",
     "DBPass" : ""

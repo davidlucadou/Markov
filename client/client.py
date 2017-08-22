@@ -33,7 +33,7 @@ class Client(pydle.Client):
 
     def on_channel_message(self, target: str, by: str, message: str):
         command = message.split()[0]
-        if by == 'shane':
+        if by == self.config['admin']:
             if command == '!d':
                 self.disconnect()
 
