@@ -12,8 +12,8 @@ class Client(pydle.Client):
     def __init__(self, config):
         self.config = config
         super(self.__class__, self).__init__(nickname=config['nick'], username=config['user'], realname=config['real'])
-        db_connection_string = """dbname=\'{}\' user=\'{}\' host=\'localhost\' password=\'{}\'""" \
-            .format(config['DBName'], config['DBUser'], config['DBPass'])
+        db_connection_string = """dbname=\'{}\' user=\'{}\' host=\'{}\' port=\'{}\' password=\'{}\'""" \
+            .format(config['DBName'], config['DBUser'], config['DBHostname'], config['DBPort'], config['DBPass'])
         try:
             self.db_connection = psycopg2.connect(db_connection_string)
             print('Connected to DB')
