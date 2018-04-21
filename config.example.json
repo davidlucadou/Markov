@@ -11,12 +11,12 @@
 	"trigger": "",
 	"minGap": 30,
 	"maxLineLength": 20,
-	"chance" : 10,
-	"posting" : false,
-	"admin" : "",
+	"chance": 10,
+	"posting": false,
+	"admin": "",
     "DBHostname": "localhost",
     "DBPort": 5432,
-    "DBName" : "",
-    "DBUser" : "",
-    "DBPass" : ""
+    "DBName": "",
+    "DBUser": "",
+    "DBPass": ""
 }
